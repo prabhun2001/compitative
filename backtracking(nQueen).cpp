@@ -40,7 +40,7 @@ bool nQueen(int** arr,int x,int n){
             if(nQueen(arr,x+1,n)){
                 return true;
             }
-            arr[x][col]=0;
+            arr[x][col]=0; //backtracking
         }
     }
     return false;

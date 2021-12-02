@@ -8,14 +8,7 @@ int fun(vector<int> v){
     int one_len=0,total_one=0;
     int n=v.size();
     for(int i=0;i<n;i++){
-        if(v[i]==0 && v[i-1]==1){
-            total_one=one_len;
-            one_len=0;
-        }
-        if(v[i]==1 && v[i-1]==0){
-            total_zero=zero_len;
-            zero_len=0;
-        }
+        
         if(v[i]==0){
             
             zero_len+=1;
@@ -25,6 +18,14 @@ int fun(vector<int> v){
             
             one_len+=1;
            
+        }
+        if(v[i]==0 && v[i-1]==1 || (i==n-1 && v[i]==1)){
+            total_one=one_len;
+            one_len=0;
+        }
+        if(v[i]==1 && v[i-1]==0 || (i==n-1 && v[i]==0)){
+            total_zero=zero_len;
+            zero_len=0;
         }
         if(total_zero < total_one){
             curr_len=2*total_zero;
@@ -40,8 +41,10 @@ int fun(vector<int> v){
 
 int main(){
     int n;
-    vector<int> v{0,1,1,0,0,1,1,1,0,1};
+    vector<int> v{0,1,1,0,1,0,0,1,1};
     n=fun(v);
+    
+    
     cout<<"\nlength = "<<n;
     return 0;
 }

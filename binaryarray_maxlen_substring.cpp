@@ -1,3 +1,4 @@
+#max length of the subarray containing equal number of 0s and 1s and 0s and 1s should be seperated 
 #include<bits/stdc++.h>
 using namespace std;
 

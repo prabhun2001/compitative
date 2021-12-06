@@ -1,3 +1,4 @@
+//find prime numbers up to n
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
